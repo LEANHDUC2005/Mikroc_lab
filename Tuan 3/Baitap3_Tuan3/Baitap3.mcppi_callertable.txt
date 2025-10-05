@@ -1,0 +1,22 @@
+main
+	__CC2DW
+		____DoICP
+	lcd_init
+		lcd_put_nibble
+		lcd_put_byte
+			lcd_put_nibble
+	napkitudacbiet
+		lcd_put_byte
+			lcd_put_nibble
+	hienthilcd
+		lcd_gotoxy
+			lcd_put_byte
+				lcd_put_nibble
+		lcd_putc
+			lcd_put_byte
+				lcd_put_nibble
+			lcd_gotoxy
+				lcd_put_byte
+					lcd_put_nibble
+	sangduoi
+interrupt

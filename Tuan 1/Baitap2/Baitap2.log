@@ -1,0 +1,7 @@
+0	1	mikroCPIC1618.exe -MSF -DBG -pP16F887 -DL -O11111114 -fo8 -N"C:\BTVXL\Tuan 1\Baitap2\Baitap2.mcppi" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Defs\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Uses\P16\" -SP"C:\BTVXL\Tuan 1\Baitap2\" -IP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Uses\P16\" -IP"C:\BTVXL\Tuan 1\Baitap2\" "Baitap2.c" "__Lib_Math.mcl" "__Lib_MathDouble.mcl" "__Lib_System.mcl" "__Lib_Delays.mcl"	 
+hint: 0	1139	Available RAM: 352 [bytes], Available ROM: 8192 [bytes]	 
+diagnostics: 0	122	Compilation Started	Baitap2.c
+error: 24	315	Invalid expression	Baitap2.c
+error: 23	402	; expected, but '' found	Baitap2.c
+error: 24	424	'}' expected '' found	Baitap2.c
+error: 0	102	Finished (with errors): 23 Sep 2025, 09:09:58	Baitap2.mcppi

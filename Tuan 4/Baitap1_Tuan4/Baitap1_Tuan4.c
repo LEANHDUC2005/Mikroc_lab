@@ -19,7 +19,7 @@ void inline1()
 {
    lcd_putc('\f');
    lcd_gotoxy(0,0);
-   lcd_puts("DUC Counter 0");
+   lcd_puts("DUC Counter 0");  // Thay bang ho ten
 }
 void inline2()
 {
@@ -59,14 +59,3 @@ void main()
      }
    }
 }
-   
-   
-   
-   
-   
-   
-   
-   
-   
-
-

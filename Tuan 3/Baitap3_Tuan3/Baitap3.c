@@ -16,45 +16,39 @@ unsigned short len2 = sizeof(line2)/sizeof(line2[0]);
 volatile unsigned char dem;
 
 volatile unsigned char temp;
-//volatile unsigned char ISR_count = 0;
-
-void interrupt()
-{
-    if ( RBIF_BIT )
-    {
-        temp = PORTB;
-        RBIF_BIT = 0;                                                                                               1
-        delay_ms(50);
-        {
-            if ( !RB6_BIT || !RB7_BIT )
-            {
-               for(dem = 0; dem < 8 ; dem++)
-               {
-                 PORTD = (unsigned char)( 0x80 >> dem );
-                 delay_ms(100);
-               }
-               
-            }
-            
-        }
-        
-    }
-    
-}
-
-
-/*
 void sangduoi()
 {
-  unsigned char start = 0x80;
-  char i;
-  for(i = 0; i < 8; i++)
-  {
-    PORTD = (unsigned char)(start >> i);
-    delay_ms(100);
-  }
+           for( dem = 0; dem < 8; dem ++ )
+           {
+              PORTD = (unsigned char)( 0x80 >> dem);
+              delay_ms(500);
+
+           }
 }
-*/
+void interrupt()
+{
+
+    if ( RBIF_BIT )
+    {
+        RBIF_BIT = 0;
+        temp = PORTB;
+        if ( !RB6_BIT )
+        { 
+           while(!RB6_BIT);
+           if ( RB6_BIT == 1)
+             sangduoi();
+             
+        }
+        if ( !RB7_BIT )
+        {
+           while(!RB7_BIT);
+           if ( RB7_BIT == 1);
+              sangduoi();
+
+        }
+    }
+}
+
 
 void napkitudacbiet()
 {
@@ -72,6 +66,7 @@ void napkitudacbiet()
 void hienthilcd()
 {
     char i;
+    lcd_putc('\f');
     lcd_gotoxy(0,0);
     for(i = 0; i < len1; i++) lcd_putc(line1[i]);
     
@@ -79,7 +74,6 @@ void hienthilcd()
     for(i = 0; i< len2 ; i++) lcd_putc(line2[i]);
     
     delay_ms(400);
-    lcd_putc('\f');
 }
 
 void main() {
@@ -103,5 +97,6 @@ void main() {
     while(1)
     {
         hienthilcd();
+        delay_ms(500);
     }
 }

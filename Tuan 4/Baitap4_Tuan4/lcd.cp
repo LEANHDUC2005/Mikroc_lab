@@ -1,5 +1,5 @@
-#line 1 "D:/mikroC PRO for PIC/Examples/LAB_MikroC/Tuan 4/Baitap4_Tuan4/lcd.c"
-#line 1 "d:/mikroc pro for pic/include/stdlib.h"
+#line 1 "C:/BTVXL/Tuan 4/Baitap4_Tuan4/lcd.c"
+#line 1 "c:/users/public/documents/mikroelektronika/mikroc pro for pic/include/stdlib.h"
 
 
 
@@ -35,7 +35,7 @@ int min(int a, int b);
 void srand(unsigned x);
 int rand();
 int xtoi(char * s);
-#line 1 "d:/mikroc pro for pic/include/ctype.h"
+#line 1 "c:/users/public/documents/mikroelektronika/mikroc pro for pic/include/ctype.h"
 
 
 
@@ -53,8 +53,8 @@ unsigned short isgraph(char character);
 unsigned short isxdigit(char character);
 unsigned short tolower(char character);
 unsigned short toupper(char character);
-#line 1 "d:/mikroc pro for pic/examples/lab_mikroc/tuan 4/baitap4_tuan4/lcd.h"
-#line 51 "d:/mikroc pro for pic/examples/lab_mikroc/tuan 4/baitap4_tuan4/lcd.h"
+#line 1 "c:/btvxl/tuan 4/baitap4_tuan4/lcd.h"
+#line 51 "c:/btvxl/tuan 4/baitap4_tuan4/lcd.h"
 typedef union _BYTE_VAL
  {
  unsigned char Val;
@@ -85,7 +85,7 @@ typedef union _BYTE_VAL
  void lcd_MoveRight(unsigned char p);
  void lcd_MoveLeft(unsigned char p);
  void lcd_String_Delay(unsigned char*s,unsigned int dly);
-#line 18 "D:/mikroC PRO for PIC/Examples/LAB_MikroC/Tuan 4/Baitap4_Tuan4/lcd.c"
+#line 18 "C:/BTVXL/Tuan 4/Baitap4_Tuan4/lcd.c"
 unsigned char lcd_busy()
 {
 

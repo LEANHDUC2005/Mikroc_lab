@@ -9,13 +9,14 @@ main
 		lcd_put_byte
 			lcd_put_nibble
 	hienthilcd
-		lcd_gotoxy
-			lcd_put_byte
-				lcd_put_nibble
 		lcd_putc
 			lcd_put_byte
 				lcd_put_nibble
 			lcd_gotoxy
 				lcd_put_byte
 					lcd_put_nibble
+		lcd_gotoxy
+			lcd_put_byte
+				lcd_put_nibble
 interrupt
+	sangduoi

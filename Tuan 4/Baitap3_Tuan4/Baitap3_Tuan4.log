@@ -1,0 +1,14 @@
+0	1	mikroCPIC1618.exe -MSF -DBG -pP16F887 -DL -O11111114 -fo8 -N"C:\BTVXL\Tuan 4\Baitap3_Tuan4\Baitap3_Tuan4.mcppi" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Defs\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Uses\P16\" -SP"C:\BTVXL\Tuan 4\Baitap3_Tuan4\" -IP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Uses\P16\" "Baitap3_Tuan4.c" "lcd.c" "__Lib_Math.mcl" "__Lib_MathDouble.mcl" "__Lib_System.mcl" "__Lib_Delays.mcl"	 
+hint: 0	1139	Available RAM: 352 [bytes], Available ROM: 8192 [bytes]	 
+diagnostics: 0	122	Compilation Started	lcd.h
+diagnostics: 97	123	Compiled Successfully	Baitap3_Tuan4.c
+diagnostics: 0	122	Compilation Started	stdlib.h
+hint: 244	1163	Variable 'i' has been declared, but not used	lcd.c
+diagnostics: 375	123	Compiled Successfully	lcd.c
+diagnostics: 0	127	All files Compiled in 172 ms	 
+hint: 0	1144	Used RAM (bytes): 79 (22%)  Free RAM (bytes): 273 (78%)	Used RAM (bytes): 79 (22%)  Free RAM (bytes): 273 (78%)
+hint: 0	1144	Used ROM (program words): 573 (7%)  Free ROM (program words): 7619 (93%)	Used ROM (program words): 573 (7%)  Free ROM (program words): 7619 (93%)
+diagnostics: 0	125	Project Linked Successfully	Baitap3_Tuan4.mcppi
+diagnostics: 0	128	Linked in 31 ms	 
+diagnostics: 0	129	Project 'Baitap3_Tuan4.mcppi' completed: 359 ms	 
+diagnostics: 0	103	Finished successfully: 14 Oct 2025, 07:28:06	Baitap3_Tuan4.mcppi

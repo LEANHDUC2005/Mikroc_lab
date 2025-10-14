@@ -1,0 +1,3 @@
+main
+	ccp1_init
+	ccp2_init

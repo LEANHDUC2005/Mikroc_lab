@@ -1,0 +1,22 @@
+main
+	__CC2DW
+		____DoICP
+	lcd_sw1
+		lcd_putc
+			lcd_put_byte
+				lcd_put_nibble
+			lcd_gotoxy
+				lcd_put_byte
+					lcd_put_nibble
+		lcd_gotoxy
+			lcd_put_byte
+				lcd_put_nibble
+		lcd_puts
+			____DoICP
+			lcd_putc
+				lcd_put_byte
+					lcd_put_nibble
+				lcd_gotoxy
+					lcd_put_byte
+						lcd_put_nibble
+	ccp1_sw1_init

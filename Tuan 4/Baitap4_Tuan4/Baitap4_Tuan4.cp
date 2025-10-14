@@ -1,6 +1,6 @@
-#line 1 "D:/mikroC PRO for PIC/Examples/LAB_MikroC/Tuan 4/Baitap4_Tuan4/Baitap4_Tuan4.c"
-#line 1 "d:/mikroc pro for pic/examples/lab_mikroc/tuan 4/baitap4_tuan4/lcd.h"
-#line 51 "d:/mikroc pro for pic/examples/lab_mikroc/tuan 4/baitap4_tuan4/lcd.h"
+#line 1 "C:/BTVXL/Tuan 4/Baitap4_Tuan4/Baitap4_Tuan4.c"
+#line 1 "c:/btvxl/tuan 4/baitap4_tuan4/lcd.h"
+#line 51 "c:/btvxl/tuan 4/baitap4_tuan4/lcd.h"
 typedef union _BYTE_VAL
  {
  unsigned char Val;
@@ -31,7 +31,7 @@ typedef union _BYTE_VAL
  void lcd_MoveRight(unsigned char p);
  void lcd_MoveLeft(unsigned char p);
  void lcd_String_Delay(unsigned char*s,unsigned int dly);
-#line 4 "D:/mikroC PRO for PIC/Examples/LAB_MikroC/Tuan 4/Baitap4_Tuan4/Baitap4_Tuan4.c"
+#line 7 "C:/BTVXL/Tuan 4/Baitap4_Tuan4/Baitap4_Tuan4.c"
 unsigned char kitudacbiet[] = { 4,17,14,17,31,16,14,0,
  14,9,9,29,9,9,14,0,
  2,4,1,19,18,18,12,0,
@@ -40,30 +40,25 @@ unsigned char kitudacbiet[] = { 4,17,14,17,31,16,14,0,
 unsigned char line1[] = { 0x4C, 0x00, 0x20, 0x41, 0x6E, 0x68, 0x20, 0x01, 0x02, 0x63 };
 unsigned char len_line1 = sizeof(line1)/sizeof(line1[0]);
 
-void delaytimer1_50us(unsigned int n)
+void delaytimer1_100us(unsigned int n)
 {
  while(--n)
  {
  TMR1H = 0xFF;
  TMR1L = 0xE7;
  TMR1IF_BIT = 0;
- while(TMR1IF_BIT);
+ while(TMR1IF_BIT == 0);
  }
 }
 
-void delaytimer1_150us()
+void delaytimer1_400us()
 {
- delaytimer1_50us(3);
-}
-
-void delaytimer1_350us()
-{
- delaytimer1_50us(7);
+ delaytimer1_100us(4);
 }
 
 void napkitudacbiet()
 {
- char i;
+ char i = 0;
  lcd_put_byte(0, 0x40);
  while( kitudacbiet[i] != 0x99 )
  {
@@ -92,10 +87,10 @@ void main()
  TRISD0_BIT = 0;
 
  TMR1ON_BIT = 1;
- TMR1CS_BIT = 1;
+ TMR1CS_BIT = 0;
  T1SYNC_BIT = 1;
- T1CKPS1_BIT = 1;
- T1CKPS0_BIT = 0;
+ T1CKPS1_BIT = 0;
+ T1CKPS0_BIT = 1;
  GIE_BIT = PEIE_BIT = TMR1IE_BIT = 0;
 
  TMR1IF_BIT = 0;
@@ -103,12 +98,13 @@ void main()
  lcd_init();
  napkitudacbiet();
  hienthilcd();
+
  while(1)
  {
  RD0_BIT = 0;
- delaytimer1_350us();
+ delaytimer1_100us(1);
  RD0_BIT = 1;
- delaytimer1_150us();
+ delaytimer1_400us();
  }
 
 }

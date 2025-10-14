@@ -26,7 +26,6 @@ main
 				lcd_gotoxy
 					lcd_put_byte
 						lcd_put_nibble
-	delaytimer1_350us
-		delaytimer1_50us
-	delaytimer1_150us
-		delaytimer1_50us
+	delaytimer1_100us
+	delaytimer1_400us
+		delaytimer1_100us

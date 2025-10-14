@@ -1,6 +1,6 @@
-#line 1 "D:/mikroC PRO for PIC/Examples/LAB_MikroC/Tuan 3/Baitap3_Tuan3/Baitap3.c"
-#line 1 "d:/mikroc pro for pic/examples/lab_mikroc/tuan 3/baitap3_tuan3/lcd.h"
-#line 51 "d:/mikroc pro for pic/examples/lab_mikroc/tuan 3/baitap3_tuan3/lcd.h"
+#line 1 "C:/BTVXL/Tuan 3/Baitap3_Tuan3/Baitap3.c"
+#line 1 "c:/btvxl/tuan 3/baitap3_tuan3/lcd.h"
+#line 51 "c:/btvxl/tuan 3/baitap3_tuan3/lcd.h"
 typedef union _BYTE_VAL
  {
  unsigned char Val;
@@ -31,7 +31,7 @@ typedef union _BYTE_VAL
  void lcd_MoveRight(unsigned char p);
  void lcd_MoveLeft(unsigned char p);
  void lcd_String_Delay(unsigned char*s,unsigned int dly);
-#line 4 "D:/mikroC PRO for PIC/Examples/LAB_MikroC/Tuan 3/Baitap3_Tuan3/Baitap3.c"
+#line 4 "C:/BTVXL/Tuan 3/Baitap3_Tuan3/Baitap3.c"
 unsigned char kitudacbiet[] = { 0x08, 0x04, 0x0e, 0x01, 0x0f, 0x11, 0x0f, 0x00,
  14,17,14,1,15,17,15,4,
  0x02, 0x15, 0x0e, 0x01, 0x0f, 0x11, 0x0f, 0x00,
@@ -47,32 +47,38 @@ unsigned short len2 = sizeof(line2)/sizeof(line2[0]);
 volatile unsigned char dem;
 
 volatile unsigned char temp;
+void sangduoi()
+{
+ for( dem = 0; dem < 8; dem ++ )
+ {
+ PORTD = (unsigned char)( 0x80 >> dem);
+ delay_ms(500);
 
-
+ }
+}
 void interrupt()
 {
- if ( RBIF_BIT )
- {
- temp = PORTB;
+
  RBIF_BIT = 0;
- delay_ms(50);
+ temp = PORTB;
+ if ( !RB6_BIT )
  {
- if ( !RB6_BIT || !RB7_BIT )
- {
- for(dem = 0; dem < 8 ; dem++)
- {
- PORTD = (unsigned char)( 0x80 >> dem );
- delay_ms(100);
- }
+ while(!RB6_BIT);
+ if ( RB6_BIT == 1)
+ sangduoi();
 
  }
-
- }
+ if ( !RB7_BIT )
+ {
+ while(!RB7_BIT);
+ if ( RB7_BIT == 1);
+ sangduoi();
 
  }
 
 }
-#line 59 "D:/mikroC PRO for PIC/Examples/LAB_MikroC/Tuan 3/Baitap3_Tuan3/Baitap3.c"
+
+
 void napkitudacbiet()
 {
  char i = 0;
@@ -89,6 +95,7 @@ void napkitudacbiet()
 void hienthilcd()
 {
  char i;
+ lcd_putc('\f');
  lcd_gotoxy(0,0);
  for(i = 0; i < len1; i++) lcd_putc(line1[i]);
 
@@ -96,7 +103,6 @@ void hienthilcd()
  for(i = 0; i< len2 ; i++) lcd_putc(line2[i]);
 
  delay_ms(400);
- lcd_putc('\f');
 }
 
 void main() {
@@ -120,5 +126,6 @@ void main() {
  while(1)
  {
  hienthilcd();
+ delay_ms(500);
  }
 }

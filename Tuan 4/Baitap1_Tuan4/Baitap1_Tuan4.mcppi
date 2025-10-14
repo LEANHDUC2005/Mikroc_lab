@@ -6,7 +6,7 @@ Value=0
 [BUILD_TYPE]
 Value=0
 [ACTIVE_TAB]
-Value=..\Baitap2_Tuan4\Baitap2_Tuan4.c
+Value=Baitap1_Tuan4.c
 [USE_EEPROM]
 Value=0
 [USE_HEAP]
@@ -25,9 +25,7 @@ Count=0
 Count=0
 ActiveImageIndex=-1
 [OPENED_FILES]
-File0=Baitap1_Tuan4.c
-File1=..\..\Tuan 3\Baitap3_Tuan3\Baitap3.c
-Count=2
+Count=0
 [EEPROM]
 Count=0
 [ACTIVE_COMMENTS_FILES]
@@ -47,11 +45,9 @@ Count=0
 Count=0
 [EXPANDED_NODES]
 0=Baitap1_Tuan4.mcppi
-22=Sources
-23=Baitap2_Tuan4
-Count=3
+Count=1
 [LIB_EXPANDED_NODES]
-Count=0
+Count=1
 [PROGRAMMER_TYPE]
 Value=mikroE mikroProg
 [CODEGRIP_OPTIONS]

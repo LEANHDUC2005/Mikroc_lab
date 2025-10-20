@@ -172,9 +172,6 @@ c2rsel
 c2rsel_bit
 c2sync
 c2sync_bit
-ccp1_sw1_init
-ccp1_sw2_init
-ccp1_sw3_init
 ccp1con
 ccp1ie
 ccp1ie_bit
@@ -336,6 +333,7 @@ intedg
 intedg_bit
 intf
 intf_bit
+io_init
 iocb
 iocb0
 iocb0_bit
@@ -362,6 +360,9 @@ ircf2_bit
 irp
 irp_bit
 kitudacbiet
+lcd_1
+lcd_2
+lcd_3
 lcd_busy
 lcd_get_byte
 lcd_gotoxy
@@ -375,11 +376,10 @@ lcd_puts
 lcd_shiftleft
 lcd_shiftright
 lcd_string_delay
-lcd_sw1
-line_1a
-line_1b
-line_2a
-line1_b
+line1b
+line2b
+line3a
+line3b
 longint2double
 longword2double
 lts
@@ -517,6 +517,7 @@ pulsr_bit
 pulss
 pulss_bit
 putch
+pwm1_init
 pwm1con
 r
 r_bit
@@ -777,6 +778,8 @@ toutps2
 toutps2_bit
 toutps3
 toutps3_bit
+trangthai
+trangthai_cu
 trisa
 trisa0
 trisa0_bit

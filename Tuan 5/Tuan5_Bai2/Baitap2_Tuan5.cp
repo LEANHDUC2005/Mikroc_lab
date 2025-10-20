@@ -1,6 +1,6 @@
-#line 1 "C:/BTVXL/Tuan 5/Tuan5_Bai2/Baitap2_Tuan5.c"
-#line 1 "c:/btvxl/tuan 5/tuan5_bai2/lcd.h"
-#line 51 "c:/btvxl/tuan 5/tuan5_bai2/lcd.h"
+#line 1 "D:/mikroC PRO for PIC/Examples/LAB_MikroC/Tuan 5/Tuan5_Bai2/Baitap2_Tuan5.c"
+#line 1 "d:/mikroc pro for pic/examples/lab_mikroc/tuan 5/tuan5_bai2/lcd.h"
+#line 51 "d:/mikroc pro for pic/examples/lab_mikroc/tuan 5/tuan5_bai2/lcd.h"
 typedef union _BYTE_VAL
  {
  unsigned char Val;
@@ -31,99 +31,158 @@ typedef union _BYTE_VAL
  void lcd_MoveRight(unsigned char p);
  void lcd_MoveLeft(unsigned char p);
  void lcd_String_Delay(unsigned char*s,unsigned int dly);
-#line 2 "C:/BTVXL/Tuan 5/Tuan5_Bai2/Baitap2_Tuan5.c"
-char kitudacbiet[] = {0,0,25,26,4,11,19,0,0xFF};
+#line 92 "D:/mikroC PRO for PIC/Examples/LAB_MikroC/Tuan 5/Tuan5_Bai2/Baitap2_Tuan5.c"
+unsigned char kitudacbiet[] = { 0,0,25,26,4,11,19,0,
+ 14,17,14,17,31,16,15,0,
+ 14,9,9,29,9,9,14,0,
+ 4,9,19,18,18,18,12,0,
+ 0,14,17,17,17,14,4,0,
+ 1,14,18,12,18,18,12,0,
+ 2,4,14,17,31,16,15,0,
+ 0x99};
+unsigned char line1b[] = { 0x44, 0x3D, 0x33, 0x30, 0x25 };
+unsigned char line2b[] = { 0x44, 0x3D, 0x38, 0x30, 0x25 };
+unsigned char line3a[] = { 0x4C, 0x01, 0x20, 0x41, 0x6E, 0x68, 0x20, 0x02, 0x03, 0x63 };
+unsigned char line3b[] = { 0x48, 0x04, 0x63, 0x20, 0x74, 0x05, 0x74, 0x20, 0x6E, 0x68, 0x06 };
 
-const char line_1a[] = "f=3KHz";
-char line_1b[] = { 0x44, 0x3D, 0x33, 0x30, 0x00 };
-
-const char line_2a[] = "f=3Khz";
-char line1_b[] = { 0x44, 0x3D, 0x33, 0x80, 0x00 };
-
-void napkitudacbiet()
+void IO_init(void)
 {
- char i;
+ ANSEL = ANSELH = 0;
+ TRISD = 0x07;
+ TRISC = 1;
+}
+
+void PWM1_init(unsigned int PR2_, unsigned int duty_reg)
+{
+ TRISC2_BIT = 1;
+ PR2 = PR2_;
+
+ TMR2IF_BIT = 0;
+ T2CKPS1_BIT = 0;
+ T2CKPS0_BIT = 1;
+ TMR2ON_BIT = 1;
+
+ CCP1CON = 0x0C;
+ CCPR1L = (unsigned char)(duty_reg >> 2 & 0xFF);
+ DC1B1_BIT = (unsigned char)(duty_reg >> 1 & 0x01);
+ DC1B0_BIT = (unsigned char)(duty_reg & 0x01);
+
+ while(TMR2IF_BIT == 0);
+ TRISC2_BIT = 0;
+
+}
+
+void napkitudacbiet(void)
+{
+ char i = 0;
  lcd_put_byte(0, 0x40);
- while( kitudacbiet[i] != 0xFF )
+ while( kitudacbiet[i] != 0x99 )
  {
  lcd_put_byte(1, kitudacbiet[i]);
  i++;
  }
+
 }
 
-void lcd_sw1()
+void LCD_1(void)
 {
  char i;
  lcd_putc('\f');
+ delay_us(2);
  lcd_gotoxy(0,0);
- lcd_puts(line_1a);
+ lcd_puts("f=5KHz");
  lcd_gotoxy(0,1);
- for( i = 0; i < 5; i++ ) lcd_putc(line_1b[i]);
+ for(i = 0; i < 5; i++) lcd_putc( line1b[i] );
+
 }
 
-void ccp1_sw1_init()
+void LCD_2(void)
 {
- TRISC2_BIT = 1;
- PR2 = 164;
+ char i;
+ lcd_putc('\f');
+ delay_us(2);
+ lcd_gotoxy(0,0);
+ lcd_puts("f=5KHz");
+ lcd_gotoxy(0,1);
+ for(i = 0; i < 5; i++) lcd_putc( line2b[i] );
 
- CCP1CON = 0X0C;
- CCPR1L = 49;
- DC1B1_BIT = 1;
- DC1B0_BIT = 1;
-
- TMR2IF_BIT = 0;
- T2CON = 0X05;
- while(TMR2IF_BIT == 0);
- TRISC2_BIT = 0;
 }
 
-void ccp1_sw2_init()
+void LCD_3(void)
 {
- TRISC2_BIT = 1;
- PR2 = 164;
+ char i;
+ lcd_putc('\f');
+ delay_us(2);
+ lcd_gotoxy(0,0);
+ for(i = 0; i < 10; i++) lcd_putc( line3a[i] );
+ lcd_gotoxy(0,1);
+ for(i = 0; i < 11; i++) lcd_putc( line3b[i] );
 
- CCP1CON = 0X0C;
- CCPR1L = 133;
- DC1B1_BIT = 0;
- DC1B0_BIT = 0;
-
- TMR2IF_BIT = 0;
- T2CON = 0X05;
- while(TMR2IF_BIT == 0);
- TRISC2_BIT = 0;
 }
-
-void ccp1_sw3_init()
+unsigned int trangthai = 0;
+unsigned int trangthai_cu = -1;
+void main(void)
 {
- TRISC2_BIT = 1;
- CCP1CON = 0;
-}
+ IO_init();
+ lcd_init();
+ napkitudacbiet();
 
-
-
-void main()
-{
- ANSEL = ANSELH = 0;
- TRISD = 1;
  while(1)
  {
- if ( RD0 == 0 )
+ if ( RD0_BIT == 0 )
  {
- lcd_sw1();
- ccp1_sw1_init();
+ delay_ms(10);
+ if ( RD0_BIT == 0 ) trangthai = 1;
+ }
+ else if ( RD1_BIT == 0 )
+ {
+ delay_ms(10);
+ if ( RD1_BIT == 0 ) trangthai = 2;
+ }
+ else if ( RD2_BIT == 0 )
+ {
+ delay_ms(10);
+ if ( RD2_BIT == 0 ) trangthai = 3;
+ }
+
+ if ( trangthai != trangthai_cu )
+ {
+ trangthai_cu = trangthai;
+
+ switch(trangthai)
+ {
+ case 1:
+ {
+ PWM1_init(99,120);
+ LCD_1();
+ break;
 
  }
- else if ( RD1 == 0 )
+ case 2:
  {
-
- ccp1_sw2_init();
+ PWM1_init(99,320);
+ LCD_2();
+ break;
 
  }
- else if ( RD2 == 0 )
+ case 3:
  {
+ PWM1_init(0,0);
+ LCD_3();
+ break;
 
- ccp1_sw3_init();
+ }
+ default:
+ {
+ CCP1CON = 0;
+ TMR2ON_BIT = 0;
+ TRISC2_BIT = 1;
+ lcd_putc('\f');
+ break;
 
+ }
+ }
+ delay_ms(20);
  }
  }
 

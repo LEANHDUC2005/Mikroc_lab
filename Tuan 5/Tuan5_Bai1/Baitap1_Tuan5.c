@@ -1,54 +1,63 @@
-/*Vi?t chuong tr�nh di?u khi?n t?o 2 xung PWM c� :
-f
-PWM = xKHz, D1 = 75% t?i ch�n CCP1 v� D2 = 25%
-t?i ch�n CCP2. S? d?ng modul CCP ? ch? d? PWM d?
-t?o xung.
-Bi?t r?ng: fosc = 8MHz
-x= s? th? 4 c?a MSSV t? tr�i qua ph?i
+/*
+Viết chương trình điều khiển tạo 2 xung PWM có : 
+fPWM = xKHz, D1 = 75% tại chân CCP1 và D2 = 25% 
+tại chân CCP2. Sử dụng modul CCP ở chế độ PWM để
+tạo xung.
+Biết rằng: fosc = 8MHz
+x= số thứ 4 của MSSV từ trái qua phải
+Ví dụ: MSSV 19482711 thì x=8KHz
 */
-void ccp1_init()   // 75%
+#define _XTAL_FREQ 8000000
+// fPWM = 4KHz
+void IO_init(void)
+{
+  ANSEL = ANSELH = 0;
+}
+
+void PWM1_init(void)
 {
   TRISC2_BIT = 1;
-  PR2 =  99;
-  CCPR1L =  75;
-  CCP1CON = 0x0C;
-  
-  DC1B1_BIT = 0;
-  DC1B0_BIT = 0;
+  PR2 = 124;
+
 
   TMR2IF_BIT = 0;
-  
-  TMR2ON_BIT = 1;
-  T2CKPS1_BIT = 0;
   T2CKPS0_BIT = 1;
+  T2CKPS1_BIT = 0;
+  TMR2ON_BIT = 1;
   
-  while(TMR2IF_BIT == 0);
+  CCP1CON = 0x0C;
+  CCPR1L = (unsigned char)( 375 >> 2 & 0xFF );
+  DC1B0_BIT = ( 375 & 0x01 );
+  DC1B1_BIT = ( 375 >> 1 & 0x01 );
+  
+  while( TMR2IF_BIT == 0 );
   TRISC2_BIT = 0;
+
 }
 
-void ccp2_init()  // 25%
+void PWM2_init(void)
 {
   TRISC1_BIT = 1;
-  PR2 = 99;
-  CCPR2L = 25;
-  CCP2CON = 0x0C;
-
-  DC2B1_BIT = 0;
-  DC2B0_BIT = 0;
+  PR2 = 124;
 
   TMR2IF_BIT = 0;
-  TMR2ON_BIT = 1;
-  T2CKPS1_BIT = 0;
   T2CKPS0_BIT = 1;
+  T2CKPS1_BIT = 0;
+  TMR2ON_BIT = 1;
 
-  while(TMR2IF_BIT == 0);
+  CCP2CON = 0x0C;
+  CCPR2L = (unsigned char)( 125 >> 2 & 0xFF );
+  DC2B0_BIT = ( 125 & 0x01 );
+  DC2B1_BIT = ( 125 >> 1 & 0x01 );
+  
+  while( TMR2IF_BIT == 0 );
   TRISC1_BIT = 0;
+
 }
 
-void main() 
+void main(void)
 {
-   ANSEL = ANSELH = 0;
-   ccp1_init();
-   ccp2_init();
-   while(1);
+  IO_init();
+  PWM1_init();
+  PWM2_init();
 }

@@ -1,3 +1,4 @@
 main
-	ccp1_init
-	ccp2_init
+	IO_init
+	PWM1_init
+	PWM2_init

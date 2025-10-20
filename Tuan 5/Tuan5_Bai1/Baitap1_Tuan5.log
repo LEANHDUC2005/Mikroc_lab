@@ -1,11 +1,11 @@
-0	1	mikroCPIC1618.exe -MSF -DBG -pP16F887 -DL -O11111114 -fo8 -N"C:\BTVXL\Tuan 5\Tuan5_Bai1\Baitap1_Tuan5.mcppi" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Defs\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Uses\P16\" -SP"C:\BTVXL\Tuan 5\Tuan5_Bai1\" -IP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Uses\P16\" "Baitap1_Tuan5.c" "__Lib_Math.mcl" "__Lib_MathDouble.mcl" "__Lib_System.mcl" "__Lib_Delays.mcl"	 
+0	1	mikroCPIC1618.exe -MSF -DBG -pP16F887 -DL -O11111114 -fo8 -N"D:\mikroC PRO for PIC\Examples\LAB_MikroC\Tuan 5\Tuan5_Bai1\Baitap1_Tuan5.mcppi" -SP"D:\mikroC PRO for PIC\Defs\" -SP"D:\mikroC PRO for PIC\Uses\P16\" -SP"D:\mikroC PRO for PIC\Examples\LAB_MikroC\Tuan 5\Tuan5_Bai1\" -IP"D:\mikroC PRO for PIC\Uses\P16\" "Baitap1_Tuan5.c" "__Lib_Math.mcl" "__Lib_MathDouble.mcl" "__Lib_System.mcl" "__Lib_Delays.mcl"	 
 hint: 0	1139	Available RAM: 352 [bytes], Available ROM: 8192 [bytes]	 
 diagnostics: 0	122	Compilation Started	Baitap1_Tuan5.c
-diagnostics: 54	123	Compiled Successfully	Baitap1_Tuan5.c
-diagnostics: 0	127	All files Compiled in 78 ms	 
+diagnostics: 63	123	Compiled Successfully	Baitap1_Tuan5.c
+diagnostics: 0	127	All files Compiled in 47 ms	 
 hint: 0	1144	Used RAM (bytes): 2 (1%)  Free RAM (bytes): 350 (99%)	Used RAM (bytes): 2 (1%)  Free RAM (bytes): 350 (99%)
-hint: 0	1144	Used ROM (program words): 52 (1%)  Free ROM (program words): 8140 (99%)	Used ROM (program words): 52 (1%)  Free ROM (program words): 8140 (99%)
+hint: 0	1144	Used ROM (program words): 53 (1%)  Free ROM (program words): 8139 (99%)	Used ROM (program words): 53 (1%)  Free ROM (program words): 8139 (99%)
 diagnostics: 0	125	Project Linked Successfully	Baitap1_Tuan5.mcppi
-diagnostics: 0	128	Linked in 15 ms	 
-diagnostics: 0	129	Project 'Baitap1_Tuan5.mcppi' completed: 250 ms	 
-diagnostics: 0	103	Finished successfully: 14 Oct 2025, 09:02:18	Baitap1_Tuan5.mcppi
+diagnostics: 0	128	Linked in 16 ms	 
+diagnostics: 0	129	Project 'Baitap1_Tuan5.mcppi' completed: 203 ms	 
+diagnostics: 0	103	Finished successfully: 20 Oct 2025, 22:04:42	Baitap1_Tuan5.mcppi

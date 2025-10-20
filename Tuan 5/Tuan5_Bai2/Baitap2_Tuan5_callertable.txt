@@ -1,7 +1,16 @@
 main
 	__CC2DW
 		____DoICP
-	lcd_sw1
+	IO_init
+	lcd_init
+		lcd_put_nibble
+		lcd_put_byte
+			lcd_put_nibble
+	napkitudacbiet
+		lcd_put_byte
+			lcd_put_nibble
+	PWM1_init
+	LCD_1
 		lcd_putc
 			lcd_put_byte
 				lcd_put_nibble
@@ -19,4 +28,37 @@ main
 				lcd_gotoxy
 					lcd_put_byte
 						lcd_put_nibble
-	ccp1_sw1_init
+	LCD_2
+		lcd_putc
+			lcd_put_byte
+				lcd_put_nibble
+			lcd_gotoxy
+				lcd_put_byte
+					lcd_put_nibble
+		lcd_gotoxy
+			lcd_put_byte
+				lcd_put_nibble
+		lcd_puts
+			____DoICP
+			lcd_putc
+				lcd_put_byte
+					lcd_put_nibble
+				lcd_gotoxy
+					lcd_put_byte
+						lcd_put_nibble
+	LCD_3
+		lcd_putc
+			lcd_put_byte
+				lcd_put_nibble
+			lcd_gotoxy
+				lcd_put_byte
+					lcd_put_nibble
+		lcd_gotoxy
+			lcd_put_byte
+				lcd_put_nibble
+	lcd_putc
+		lcd_put_byte
+			lcd_put_nibble
+		lcd_gotoxy
+			lcd_put_byte
+				lcd_put_nibble

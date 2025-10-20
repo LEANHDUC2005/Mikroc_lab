@@ -167,7 +167,7 @@ void main(void)
  }
  case 3:
  {
- PWM1_init(0,0);
+ PWM1_init(99,0);
  LCD_3();
  break;
 

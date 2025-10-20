@@ -5,10 +5,10 @@ diagnostics: 246	123	Compiled Successfully	Baitap2_Tuan5.c
 diagnostics: 0	122	Compilation Started	stdlib.h
 hint: 244	1163	Variable 'i' has been declared, but not used	lcd.c
 diagnostics: 375	123	Compiled Successfully	lcd.c
-diagnostics: 0	127	All files Compiled in 110 ms	 
+diagnostics: 0	127	All files Compiled in 94 ms	 
 hint: 0	1144	Used RAM (bytes): 107 (30%)  Free RAM (bytes): 245 (70%)	Used RAM (bytes): 107 (30%)  Free RAM (bytes): 245 (70%)
-hint: 0	1144	Used ROM (program words): 908 (11%)  Free ROM (program words): 7284 (89%)	Used ROM (program words): 908 (11%)  Free ROM (program words): 7284 (89%)
+hint: 0	1144	Used ROM (program words): 910 (11%)  Free ROM (program words): 7282 (89%)	Used ROM (program words): 910 (11%)  Free ROM (program words): 7282 (89%)
 diagnostics: 0	125	Project Linked Successfully	Baitap2_Tuan5.mcppi
-diagnostics: 0	128	Linked in 0 ms	 
-diagnostics: 0	129	Project 'Baitap2_Tuan5.mcppi' completed: 250 ms	 
-diagnostics: 0	103	Finished successfully: 21 Oct 2025, 01:06:18	Baitap2_Tuan5.mcppi
+diagnostics: 0	128	Linked in 15 ms	 
+diagnostics: 0	129	Project 'Baitap2_Tuan5.mcppi' completed: 265 ms	 
+diagnostics: 0	103	Finished successfully: 21 Oct 2025, 01:48:59	Baitap2_Tuan5.mcppi

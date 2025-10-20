@@ -420,9 +420,11 @@ L_main33:
 	GOTO       L_main31
 ;Baitap2_Tuan5.c,225 :: 		case 3:
 L_main34:
-;Baitap2_Tuan5.c,227 :: 		PWM1_init(0,0);
-	CLRF       FARG_PWM1_init_PR2_+0
-	CLRF       FARG_PWM1_init_PR2_+1
+;Baitap2_Tuan5.c,227 :: 		PWM1_init(99,0);
+	MOVLW      99
+	MOVWF      FARG_PWM1_init_PR2_+0
+	MOVLW      0
+	MOVWF      FARG_PWM1_init_PR2_+1
 	CLRF       FARG_PWM1_init_duty_reg+0
 	CLRF       FARG_PWM1_init_duty_reg+1
 	CALL       _PWM1_init+0

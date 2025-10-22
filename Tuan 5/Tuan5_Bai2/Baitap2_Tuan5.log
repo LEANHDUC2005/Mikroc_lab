@@ -1,14 +1,14 @@
 0	1	mikroCPIC1618.exe -MSF -DBG -pP16F887 -DL -O11111114 -fo8 -N"D:\mikroC PRO for PIC\Examples\LAB_MikroC\Tuan 5\Tuan5_Bai2\Baitap2_Tuan5.mcppi" -SP"D:\mikroC PRO for PIC\Defs\" -SP"D:\mikroC PRO for PIC\Uses\P16\" -SP"D:\mikroC PRO for PIC\Examples\LAB_MikroC\Tuan 5\Tuan5_Bai2\" -IP"D:\mikroC PRO for PIC\Uses\P16\" "Baitap2_Tuan5.c" "lcd.c" "__Lib_Math.mcl" "__Lib_MathDouble.mcl" "__Lib_System.mcl" "__Lib_Delays.mcl"	 
 hint: 0	1139	Available RAM: 352 [bytes], Available ROM: 8192 [bytes]	 
 diagnostics: 0	122	Compilation Started	lcd.h
-diagnostics: 246	123	Compiled Successfully	Baitap2_Tuan5.c
+diagnostics: 143	123	Compiled Successfully	Baitap2_Tuan5.c
 diagnostics: 0	122	Compilation Started	stdlib.h
 hint: 244	1163	Variable 'i' has been declared, but not used	lcd.c
 diagnostics: 375	123	Compiled Successfully	lcd.c
-diagnostics: 0	127	All files Compiled in 94 ms	 
-hint: 0	1144	Used RAM (bytes): 107 (30%)  Free RAM (bytes): 245 (70%)	Used RAM (bytes): 107 (30%)  Free RAM (bytes): 245 (70%)
-hint: 0	1144	Used ROM (program words): 910 (11%)  Free ROM (program words): 7282 (89%)	Used ROM (program words): 910 (11%)  Free ROM (program words): 7282 (89%)
+diagnostics: 0	127	All files Compiled in 140 ms	 
+hint: 0	1144	Used RAM (bytes): 106 (30%)  Free RAM (bytes): 246 (70%)	Used RAM (bytes): 106 (30%)  Free RAM (bytes): 246 (70%)
+hint: 0	1144	Used ROM (program words): 844 (10%)  Free ROM (program words): 7348 (90%)	Used ROM (program words): 844 (10%)  Free ROM (program words): 7348 (90%)
 diagnostics: 0	125	Project Linked Successfully	Baitap2_Tuan5.mcppi
-diagnostics: 0	128	Linked in 15 ms	 
-diagnostics: 0	129	Project 'Baitap2_Tuan5.mcppi' completed: 265 ms	 
-diagnostics: 0	103	Finished successfully: 21 Oct 2025, 01:48:59	Baitap2_Tuan5.mcppi
+diagnostics: 0	128	Linked in 32 ms	 
+diagnostics: 0	129	Project 'Baitap2_Tuan5.mcppi' completed: 329 ms	 
+diagnostics: 0	103	Finished successfully: 21 Oct 2025, 00:31:32	Baitap2_Tuan5.mcppi

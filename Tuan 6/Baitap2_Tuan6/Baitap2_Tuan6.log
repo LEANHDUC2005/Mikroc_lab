@@ -1,0 +1,12 @@
+0	1	mikroCPIC1618.exe -MSF -DBG -pP16F887 -DL -O11111114 -fo8 -N"C:\BTVXL\Tuan 6\Baitap2_Tuan6\Baitap2_Tuan6.mcppi" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Defs\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Uses\P16\" -SP"C:\BTVXL\Tuan 6\Baitap2_Tuan6\" -SP"C:\BTVXL\Tuan 6\Baitap2_Tuan6\Baitap2_Tuan6\" -IP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Uses\P16\" "Baitap2_Tuan6.c" "__Lib_Math.mcl" "__Lib_MathDouble.mcl" "__Lib_System.mcl" "__Lib_Delays.mcl"	 
+warning: 0	1501	Specified search path does not exist: 'C:\BTVXL\Tuan 6\Baitap2_Tuan6\Baitap2_Tuan6'	 
+hint: 0	1139	Available RAM: 352 [bytes], Available ROM: 8192 [bytes]	 
+diagnostics: 0	122	Compilation Started	Baitap2_Tuan6.c
+diagnostics: 55	123	Compiled Successfully	Baitap2_Tuan6.c
+diagnostics: 0	127	All files Compiled in 62 ms	 
+hint: 0	1144	Used RAM (bytes): 8 (2%)  Free RAM (bytes): 344 (98%)	Used RAM (bytes): 8 (2%)  Free RAM (bytes): 344 (98%)
+hint: 0	1144	Used ROM (program words): 851 (10%)  Free ROM (program words): 7341 (90%)	Used ROM (program words): 851 (10%)  Free ROM (program words): 7341 (90%)
+diagnostics: 0	125	Project Linked Successfully	Baitap2_Tuan6.mcppi
+diagnostics: 0	128	Linked in 32 ms	 
+diagnostics: 0	129	Project 'Baitap2_Tuan6.mcppi' completed: 250 ms	 
+diagnostics: 0	103	Finished successfully: 22 Oct 2025, 14:50:55	Baitap2_Tuan6.mcppi

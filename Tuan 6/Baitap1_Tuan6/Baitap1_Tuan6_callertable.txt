@@ -1,0 +1,9 @@
+main
+	__CC2DW
+		____DoICP
+	IO_init
+	ADC_init
+	ADC_read
+	LED_init
+		Mul_32x32_U
+		Div_32x32_U

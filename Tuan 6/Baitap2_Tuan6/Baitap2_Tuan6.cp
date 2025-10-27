@@ -1,12 +1,26 @@
-#line 1 "C:/BTVXL/Tuan 6/Baitap2_Tuan6/Baitap2_Tuan6.c"
+#line 1 "D:/mikroC PRO for PIC/Examples/LAB_MikroC/Tuan 6/Baitap2_Tuan6/Baitap2_Tuan6.c"
 
 unsigned int value = 0;
 unsigned char temperture = 0;
+unsigned char seg7_CC[10] = {
+ 0x3F,
+ 0x06,
+ 0x5B,
+ 0x4F,
+ 0x66,
+ 0x6D,
+ 0x7D,
+ 0x07,
+ 0x7F,
+ 0x6F
+};
 
 void IO_init()
 {
  ANSEL = ANSELH = 0;
  TRISD = 0;
+ TRISC = 0;
+ TRISB = 0;
  TRISE1_BIT = 1;
  ANS6_BIT = 1;
 }
@@ -38,9 +52,23 @@ unsigned int ADC_Read(void)
 
 void LED_init(unsigned int value)
 {
+ char i;
  if ( value > 1023 ) value = 1023;
- temperture = (float)(value * 500.0 + 511.0)/1023.0;
+
+ temperture = (float)(value * 500.0 + 200.0)/1023.0;
+
+
  PORTD = (unsigned char)temperture;
+
+ for(i=0; i<4; i++)
+ {
+ PORTB = (unsigned char)(0x01 << i);
+ PORTC = (unsigned char)(temperture%10 << 3);
+ temperture = temperture/10;
+ delay_ms(200);
+ }
+
+
 }
 void main() {
  IO_init();

@@ -3,8 +3,9 @@ main
 		____DoICP
 	IO_init
 	ADC_init
-	ADC_Read
-	LED_init
+	ISR_B_init
+	ADC_read
+	LED_on_SW1
 		word2double
 			NRM3232
 				RES032
@@ -32,4 +33,14 @@ main
 			SETFUN32
 		double2byte
 			SETIOV3224
-		Div_8X8_U
+		double2int
+			SETIOV3224
+		Div_16x16_S
+			Div_16x16_S_L
+	PWM_CCP1_init
+	PWM_CCP1_getduty
+		Mul_16X16_U
+		Div_16X16_U
+	Timer0_init
+	Div_8X8_U
+interrupt

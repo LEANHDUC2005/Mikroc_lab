@@ -280,6 +280,7 @@ double2int
 double2longint
 double2longword
 double2word
+duty
 eccpas
 eccpas0
 eccpas0_bit
@@ -333,6 +334,7 @@ inte
 inte_bit
 intedg
 intedg_bit
+interrupt
 intf
 intf_bit
 io_init
@@ -361,7 +363,8 @@ ircf2
 ircf2_bit
 irp
 irp_bit
-led_init
+isr_b_init
+led_on_sw1
 longint2double
 longword2double
 lts
@@ -497,6 +500,8 @@ pulsr
 pulsr_bit
 pulss
 pulss_bit
+pwm_ccp1_getduty
+pwm_ccp1_init
 pwm1con
 r
 r_bit
@@ -636,7 +641,6 @@ sckp_bit
 scs
 scs_bit
 sdiv3232l
-seg7_cc
 sen
 sen_bit
 sendb
@@ -726,7 +730,9 @@ t2ckps0_bit
 t2ckps1
 t2ckps1_bit
 t2con
+temp
 temperture
+timer0_init
 tmr0
 tmr0ie
 tmr0ie_bit
@@ -759,6 +765,8 @@ toutps2
 toutps2_bit
 toutps3
 toutps3_bit
+trangthai
+trangthai_truoc
 trisa
 trisa0
 trisa0_bit

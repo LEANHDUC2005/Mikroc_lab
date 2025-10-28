@@ -1,4 +1,4 @@
-#line 1 "C:/BTVXL/Tuan 5/Tuan5_Bai2/lcd.c"
+#line 1 "C:/BTVXL/Baikiemtracuoi/lcd.c"
 #line 1 "c:/users/public/documents/mikroelektronika/mikroc pro for pic/include/stdlib.h"
 
 
@@ -53,8 +53,8 @@ unsigned short isgraph(char character);
 unsigned short isxdigit(char character);
 unsigned short tolower(char character);
 unsigned short toupper(char character);
-#line 1 "c:/btvxl/tuan 5/tuan5_bai2/lcd.h"
-#line 51 "c:/btvxl/tuan 5/tuan5_bai2/lcd.h"
+#line 1 "c:/btvxl/baikiemtracuoi/lcd.h"
+#line 51 "c:/btvxl/baikiemtracuoi/lcd.h"
 typedef union _BYTE_VAL
  {
  unsigned char Val;
@@ -85,7 +85,7 @@ typedef union _BYTE_VAL
  void lcd_MoveRight(unsigned char p);
  void lcd_MoveLeft(unsigned char p);
  void lcd_String_Delay(unsigned char*s,unsigned int dly);
-#line 18 "C:/BTVXL/Tuan 5/Tuan5_Bai2/lcd.c"
+#line 18 "C:/BTVXL/Baikiemtracuoi/lcd.c"
 unsigned char lcd_busy()
 {
 

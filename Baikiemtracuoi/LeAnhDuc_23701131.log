@@ -1,0 +1,15 @@
+0	1	mikroCPIC1618.exe -MSF -DBG -pP16F887 -DL -O11111114 -fo8 -N"C:\BTVXL\Baikiemtracuoi\LeAnhDuc_23701131.mcppi" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Defs\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Uses\P16\" -SP"C:\BTVXL\Baikiemtracuoi\" -IP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Uses\P16\" "LeAnhDuc_23701131.c" "lcd.c" "__Lib_Math.mcl" "__Lib_MathDouble.mcl" "__Lib_System.mcl" "__Lib_Delays.mcl"	 
+hint: 0	1139	Available RAM: 352 [bytes], Available ROM: 8192 [bytes]	 
+diagnostics: 0	122	Compilation Started	lcd.h
+warning: 99	1505	Suspicious pointer conversion	LeAnhDuc_23701131.c
+diagnostics: 149	123	Compiled Successfully	LeAnhDuc_23701131.c
+diagnostics: 0	122	Compilation Started	stdlib.h
+hint: 244	1163	Variable 'i' has been declared, but not used	lcd.c
+diagnostics: 375	123	Compiled Successfully	lcd.c
+diagnostics: 0	127	All files Compiled in 140 ms	 
+hint: 0	1144	Used RAM (bytes): 124 (35%)  Free RAM (bytes): 228 (65%)	Used RAM (bytes): 124 (35%)  Free RAM (bytes): 228 (65%)
+hint: 0	1144	Used ROM (program words): 883 (11%)  Free ROM (program words): 7309 (89%)	Used ROM (program words): 883 (11%)  Free ROM (program words): 7309 (89%)
+diagnostics: 0	125	Project Linked Successfully	LeAnhDuc_23701131.mcppi
+diagnostics: 0	128	Linked in 31 ms	 
+diagnostics: 0	129	Project 'LeAnhDuc_23701131.mcppi' completed: 328 ms	 
+diagnostics: 0	103	Finished successfully: 28 Oct 2025, 09:26:10	LeAnhDuc_23701131.mcppi

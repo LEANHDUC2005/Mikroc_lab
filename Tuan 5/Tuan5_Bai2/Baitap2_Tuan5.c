@@ -109,10 +109,9 @@ void IO_init(void)
   TRISC = 1;
 }
 
-void PWM1_init(unsigned int pr2, unsigned int duty_reg)
+void PWM1_init(unsigned int duty_reg)
 {
   TRISC2_BIT = 1;
-  PR2 = pr2;
 
   TMR2IF_BIT = 0;
   T2CKPS1_BIT = 0;
@@ -177,6 +176,8 @@ void LCD_3(void)
 
 }
 unsigned int trangthai = 0;
+unsigned int trangthai_truoc = -1;
+unsigned int *select = &PR2;
 void main(void)
 {
   IO_init();
@@ -187,41 +188,58 @@ void main(void)
   {
     if ( RD0_BIT == 0 )
     {
-      delay_ms(10);
+      delay_ms(50);
       if ( RD0_BIT == 0 ) trangthai = 1;
     }
     if ( RD1_BIT == 0 )
     {
-      delay_ms(10);
+      delay_ms(50);
       if ( RD1_BIT == 0 ) trangthai = 2;
     }
     if ( RD2_BIT == 0 )
     {
-      delay_ms(10);
+      delay_ms(50);
       if ( RD2_BIT == 0 ) trangthai = 3;
     }
 
-    if ( trangthai == 1 )
+
+    if ( trangthai_truoc != trangthai )
     {
-        PWM1_init(99,120);
-        LCD_1();
-    }
-    else if( trangthai == 2 )
-    {
-        PWM1_init(99, 320);
-        LCD_2();
-    }
-    else if( trangthai == 3 )
-    {
-        PWM1_init(0,0);
-        LCD_3();
-    }
-    else
-    {
-        CCP1CON = 0;
-        TMR2ON_BIT = 0;
-        TRISC2_BIT = 1;
-        lcd_putc('\f');
+      trangthai_truoc = trangthai;
+      switch(trangthai)
+      {
+      case 1:
+        {
+          *select = 99;
+          PWM1_init(120);
+          LCD_1();
+          break;
+        }
+      case 2:
+        {
+          *select = 99;
+          PWM1_init(320);
+          LCD_2();
+          break;
+        }
+      case 3:
+        {
+          PWM1_init(0);
+          LCD_3();
+          break;
+        }
+      case 0:
+        {
+          CCP1CON = 0;
+          TMR2ON_BIT = 0;
+          TRISC2_BIT = 1;
+          lcd_putc('\f');
+          break;
+        }
+
+      }
+
+
     }
 
   }

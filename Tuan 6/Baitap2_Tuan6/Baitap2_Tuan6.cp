@@ -1,4 +1,4 @@
-#line 1 "D:/mikroC PRO for PIC/Examples/LAB_MikroC/Tuan 6/Baitap2_Tuan6/Baitap2_Tuan6.c"
+#line 1 "C:/BTVXL/Tuan 6/Baitap2_Tuan6/Baitap2_Tuan6.c"
 
 unsigned int value = 0;
 unsigned char temperture = 0;
@@ -27,6 +27,7 @@ void IO_init()
 
 void ADC_init()
 {
+
  ADCS1_BIT = 1;
  ADCS0_BIT = 0;
 
@@ -55,19 +56,11 @@ void LED_init(unsigned int value)
  char i;
  if ( value > 1023 ) value = 1023;
 
- temperture = (float)(value * 500.0 + 200.0)/1023.0;
 
 
- PORTD = (unsigned char)temperture;
+ temperture = (float)(value * 511.0)/1023.0;
 
- for(i=0; i<4; i++)
- {
- PORTB = (unsigned char)(0x01 << i);
- PORTC = (unsigned char)(temperture%10 << 3);
- temperture = temperture/10;
- delay_ms(200);
- }
-
+ PORTD = (unsigned char)(int)temperture;
 
 }
 void main() {

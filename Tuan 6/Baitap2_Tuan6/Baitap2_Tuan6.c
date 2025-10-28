@@ -26,9 +26,10 @@ void IO_init()
 
 void ADC_init()
 {
+        // Fosc/32
         ADCS1_BIT = 1;
         ADCS0_BIT = 0;
-
+        // ANS6 
         CHS3_BIT = 0;
         CHS2_BIT = 1;
         CHS1_BIT = 1;
@@ -53,20 +54,12 @@ void LED_init(unsigned int value)
 {
         char i;
         if ( value > 1023 ) value = 1023;
-        // 511mV = 0.5V : Giam sai so tai Vin <= 5V
-        temperture = (float)(value * 500.0 + 200.0)/1023.0;
+        // 200mV = 0.2V : Giam sai so tai Vin <= 5V
+        // voltage = digital * 5 / 1023
+        // tempertue = votage / 1T/10mV = voltage * 100
+        temperture = (float)(value * 511.0)/1023.0;
 
-
-        PORTD = (unsigned char)temperture;
-
-        for(i=0; i<4; i++)
-        {
-                PORTB = (unsigned char)(0x01 << i);
-                PORTC = (unsigned char)(seg7_CC[temperture%10]);
-                temperture = temperture/10;
-                delay_ms(200);
-        }
-        
+        PORTD = (unsigned char)(int)temperture;
         
 }
 void main() {

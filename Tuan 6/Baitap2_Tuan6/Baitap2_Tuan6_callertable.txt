@@ -14,17 +14,6 @@ main
 			RES032
 			SETFOV32
 			SETFUN32
-		Add_32x32_FP
-			NRM4032
-				RES032
-				SETFUN32
-				FIXSIGN32
-				SETFOV32
-			NRM3232
-				RES032
-				SETFUN32
-				FIXSIGN32
-			SETFOV32
 		Div_32x32_FP
 			SETFDZ32
 			RES032
@@ -32,4 +21,3 @@ main
 			SETFUN32
 		double2byte
 			SETIOV3224
-		Div_8X8_U

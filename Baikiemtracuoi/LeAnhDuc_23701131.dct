@@ -376,10 +376,10 @@ lcd_puts
 lcd_shiftleft
 lcd_shiftright
 lcd_string_delay
-line1b
-line2b
-line3a
-line3b
+line_sw1a
+line_sw1b
+line_sw3a
+line_sw3b
 longint2double
 longword2double
 lts
@@ -493,6 +493,7 @@ portc
 portd
 porte
 pr2
+pr2_select
 prsen
 prsen_bit
 ps0
@@ -517,7 +518,7 @@ pulsr_bit
 pulss
 pulss_bit
 putch
-pwm1_init
+pwm_ccp1_init
 pwm1con
 r
 r_bit
@@ -657,7 +658,6 @@ sckp_bit
 scs
 scs_bit
 sdiv3232l
-select
 sen
 sen_bit
 sendb

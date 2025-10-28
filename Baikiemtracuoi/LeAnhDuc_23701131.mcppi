@@ -6,7 +6,7 @@ Value=0
 [BUILD_TYPE]
 Value=0
 [ACTIVE_TAB]
-Value=Baitap2_Tuan6.c
+Value=LeAnhDuc_23701131.c
 [USE_EEPROM]
 Value=0
 [USE_HEAP]
@@ -16,16 +16,19 @@ Value=0
 [EEPROM_DEFINITION]
 Value=
 [FILES]
-File0=Baitap2_Tuan6.c
-Count=1
+File0=LeAnhDuc_23701131.c
+File1=lcd.c
+Count=2
 [BINARIES]
 Count=0
 [IMAGES]
 Count=0
 ActiveImageIndex=-1
 [OPENED_FILES]
-File0=Baitap2_Tuan6.c
-Count=1
+File0=LeAnhDuc_23701131.c
+File1=lcd.c
+File2=lcd.h
+Count=3
 [EEPROM]
 Count=0
 [ACTIVE_COMMENTS_FILES]
@@ -37,15 +40,16 @@ Count=0
 [HEADER_PATH]
 Count=0
 [HEADERS]
-Count=0
+File0=lcd.h
+Count=1
 [PLDS]
 Count=0
 [Useses]
 Count=0
 [EXPANDED_NODES]
+0=LeAnhDuc_23701131.mcppi
 1=Sources
-16=Sources
-19=Header Files
+4=Header Files
 Count=3
 [LIB_EXPANDED_NODES]
 Count=1
